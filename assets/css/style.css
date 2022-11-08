@@ -41,6 +41,15 @@ header,
 footer {
   align-items: flex-end;
 }
+/* submit css style */
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+/* meet-us @media screen  */
+
 @media screen and (max-width: 600px) {
   body {
     background-color: lightblue;
