@@ -10,6 +10,16 @@ var titlePTSEl = document.querySelector('#pts-title');
 var imgPTSEL = document.querySelector('#pts-img');
 var yelpPTSEl = document.querySelector('#pts-yelp');
 
+/* Yelp API Info
+    docs: https://www.yelp.com/developers/v3/manage_app
+    search for businesses: GET https://api.yelp.com/v3/businesses/search
+    search review for specific business: GET https://api.yelp.com/v3/businesses/{id}/reviews
+
+    1. Use location from previous page to search area around hidden gem
+    2. Parse results to make sure the pulled location fits
+    3. Pull photo, name, description
+    4. Use review api to pull reviews
+*/
 
 var renderHiddenGem = function() {
     titleHiddenGemEl.textContent = "THE HIDDEN GEM";
