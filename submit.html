@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submit Your Own Gems</title>
+  </head>
+  <body>
+    <!-- Main header -->
+    <header class="submit">
+      Submit Your Own Gems!
+      <p>Required fields are marked with an asterisk*</p>
+    </header>
+    <!-- The body form -->
+    <div id="container">
+      <!-- FName box -->
+      <div class="small-box">
+        <label for="myFName">*First Name:</label>
+        <input type="text" name="myFName" id="myFName" required />
+      </div>
+      <!-- LName box -->
+      <div class="small-box">
+        <label for="myLName">*Last Name:</label>
+        <input type="text" name="myLName" id="myLName" required />
+      </div>
+      <!-- email box -->
+      <div class="small-box">
+        <label for="myEmail">*Email:</label>
+        <input type="text" name="myEmail" id="myEmail" required />
+      </div>
+      <!-- phone number box -->
+      <div class="small-box">
+        <label for="myPhone">*Phone:</label>
+        <input type="tel" name="myPhone" id="myPhone" maxlength="12" />
+      </div>
+      <!-- comment box -->
+      <div class="small-box">
+        <label for="myComments">*Comments:</label>
+        <textarea
+          name="myComments"
+          id="myComments"
+          cols="30"
+          rows="10"
+        ></textarea>
+      </div>
+      <!-- summit button -->
+      <div class="submitBtn">
+        <input type="submit" value="Submit" />
+      </div>
+    </div>
+  </body>
+</html>
