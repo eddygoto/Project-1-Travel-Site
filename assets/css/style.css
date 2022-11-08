@@ -1,10 +1,8 @@
 /* meet us style css*/
-body {
+#meet-us-body {
   background-color: lightblue;
 }
-header {
-  display: flex;
-  justify-content: center;
+#meet-us-header {
   font-size: 48px;
   margin-bottom: 60px;
   background-color: #44555f;
