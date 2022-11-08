@@ -49,3 +49,9 @@ footer {
     flex-direction: column;
   }
 }
+
+/* script.js styles */
+#map {
+  height: 400px;
+  width: 100%;
+}
