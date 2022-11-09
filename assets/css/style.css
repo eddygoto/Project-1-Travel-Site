@@ -59,6 +59,23 @@ h1 {
   }
 }
 
+
+/* our story image */
+#squad-img {
+  width: 50%;
+  max-width: 50%;
+}
+
+/* our story paragraph */
+#ourstory-p {
+  margin-left: 35px;
+  display: flex;
+  align-items: center;
+}
+
+
+
+
 /* script.js styles */
 #map {
   height: 400px;
