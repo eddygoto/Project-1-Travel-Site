@@ -82,7 +82,7 @@ function initMap() {
 }
  /**************Display Reviews Code***************** */
 function displayReviews() {
-    for (var i = 0; i < reviews.length; i++){
+    for (var i = 0; i < 3; i++){
        placeReviewsEl.innerHTML += "<div class = 'review'>"
        placeReviewsEl.innerHTML += reviews[i].text + " --";
        placeReviewsEl.innerHTML += reviews[i].author_name + " ";

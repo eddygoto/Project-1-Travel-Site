@@ -81,8 +81,8 @@ h1 {
   height: 400px;
   width: 50%;
 }
-
+/* Formats review text on Index.html */
 .review {
-  margin-top: 10px;
+  margin-top: 16px;
   text-align: center;
 }
