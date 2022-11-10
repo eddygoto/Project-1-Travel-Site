@@ -113,3 +113,13 @@ window.initMap = initMap;
 // }
 
 // myButtonEl.addEventListener('click', buttonClickHandler);
+
+
+var getDetailsRequest = {
+  placeId: "ChIJw_9yT25T2YARL25MQwI5JhE",
+  fields: ["name", "formatted_address", "place_id", "geometry", "reviews"],
+}
+
+service.getDetails(getDetailsRequest, (place, status) => {
+  console.log("get details ", i);
+})
