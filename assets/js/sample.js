@@ -123,3 +123,41 @@ var getDetailsRequest = {
 service.getDetails(getDetailsRequest, (place, status) => {
   console.log("get details ", i);
 })
+
+
+// for (var i = 0; i < hiddenGems.length; i++) {
+    //     console.log("loop 1", i);
+    //     var fPFQRequest = {
+    //         query: hiddenGems[i], // search term query
+    //         fields: ['name', 'geometry', 'place_id'],   // fields that we want API request to return
+    //     }
+    
+    //     const service = new google.maps.places.PlacesService(map);
+    //     // var coordStr;   // stores the coordinate information for the request
+    //     // var latResult, lngResult;
+
+    //     service.findPlaceFromQuery(fPFQRequest, function(results, status) {
+    //         if (status === google.maps.places.PlacesServiceStatus.OK) {
+    //             grandOle = results[0];  // Places API sends response in results array
+    //             placeIds.push(results[0].place_id); // place_id gets the business id used for getDetails()
+    
+    //             coordStr = results[0].geometry.location.toString(); // stores the coordinates for the result as a string: '(lat, lng)'
+    //             coordStr = coordStr.slice(1, coordStr.length-1);
+    //             [latResult, lngResult] = coordStr.split(',');
+    //             lngResult = lngResult.trimStart();
+    
+    //             latResult = parseFloat(latResult);
+    //             lngResult = parseFloat(lngResult);
+
+    //             // const grandOleMarker = { lat: latResult, lng: lngResult };
+    //             // const marker = new google.maps.Marker({
+    //             //     position: grandOleMarker,
+    //             //     map: map,
+    //             // })
+    //         }
+    //     });
+    // }
+
+    // for (var j = 0; j < hiddenGems.length; j++) {
+    //     console.log(placeIds[j]);
+    // }
