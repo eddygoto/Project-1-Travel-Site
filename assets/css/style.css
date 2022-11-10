@@ -81,3 +81,8 @@ h1 {
   height: 400px;
   width: 50%;
 }
+
+.review {
+  margin-top: 10px;
+  text-align: center;
+}

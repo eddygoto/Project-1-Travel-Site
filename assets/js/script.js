@@ -12,7 +12,11 @@ var hiddenGems = [
 
 
 var reviews;
-
+var placeReviewsEl;
+window.onload = function () {
+    placeReviewsEl = document.getElementById("place-reviews")
+    displayReviews();
+}
 function initMap() {
     const map = new google.maps.Map(
         document.getElementById("map"),
@@ -31,7 +35,7 @@ function initMap() {
     const infowindow = new google.maps.InfoWindow();
     const service = new google.maps.places.PlacesService(map);
 
-    service.findPlaceFromQuery(fPFQRequest, function(results, status) {
+    service.findPlaceFromQuery(fPFQRequest, function (results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
 
             /*************** Request information for call to getDetails() ******************/
@@ -42,13 +46,13 @@ function initMap() {
 
             service.getDetails(getDetailsRequest, (place, status) => {
                 if (
-                  status === google.maps.places.PlacesServiceStatus.OK &&
-                  place &&
-                  place.geometry &&
-                  place.geometry.location
+                    status === google.maps.places.PlacesServiceStatus.OK &&
+                    place &&
+                    place.geometry &&
+                    place.geometry.location
                 ) {
                     /*************** Placing a Marker ******************/
-                    const marker = new google.maps.Marker( {
+                    const marker = new google.maps.Marker({
                         map,
                         position: place.geometry.location,
                     });
@@ -69,12 +73,27 @@ function initMap() {
                         infowindow.open(map, marker);
                     });
 
-                    reviews = place.reviews;    // store reviews outside of initMap() if needed
+                    reviews = place.reviews; // store reviews outside of initMap() if needed
+                    console.log(reviews)  
                 }
             });
         }
     });
 }
+ /**************Display Reviews Code***************** */
+function displayReviews() {
+    for (var i = 0; i < reviews.length; i++){
+       placeReviewsEl.innerHTML += "<div class = 'review'>"
+       placeReviewsEl.innerHTML += reviews[i].text + " --";
+       placeReviewsEl.innerHTML += reviews[i].author_name + " ";
+       placeReviewsEl.innerHTML += reviews[i].relative_time_description + " ";
+       placeReviewsEl.innerHTML += reviews[i].rating + " Stars";
+       placeReviewsEl.innerHTML += "</div>"
+    }
+}
+
+
+
 
 
 window.initMap = initMap;
