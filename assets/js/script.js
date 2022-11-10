@@ -11,8 +11,6 @@ var hiddenGems = [
 ];
 
 
-var coordStr;   // stores the coordinate information for the request
-var latResult, lngResult;
 var reviews;
 
 function initMap() {
@@ -20,12 +18,11 @@ function initMap() {
         document.getElementById("map"),
         {
             center: { lat: 32.7157, lng: -117.1611 }, // coords for San Diego
-            zoom: 11,
+            zoom: 12,
         }
     );
 
-    const placeIds = [];
-
+    /*************** Request information for findPlaceFromQuery ******************/
     var fPFQRequest = {
         query: hiddenGems[0], // search term query
         fields: ['name', 'geometry', 'place_id'],   // fields that we want API request to return
@@ -37,9 +34,10 @@ function initMap() {
     service.findPlaceFromQuery(fPFQRequest, function(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
 
+            /*************** Request information for call to getDetails() ******************/
             getDetailsRequest = {
-                placeId: results[0].place_id,
-                fields: ["name", "formatted_address", "place_id", "geometry", "reviews"],
+                placeId: results[0].place_id,   // getDetails searches by place_id
+                fields: ["name", "formatted_address", "place_id", "geometry", "reviews"],   // fields to return
             };
 
             service.getDetails(getDetailsRequest, (place, status) => {
@@ -49,11 +47,13 @@ function initMap() {
                   place.geometry &&
                   place.geometry.location
                 ) {
+                    /*************** Placing a Marker ******************/
                     const marker = new google.maps.Marker( {
                         map,
                         position: place.geometry.location,
                     });
 
+                    /*************** Event Listener Code ******************/
                     google.maps.event.addListener(marker, "click", () => {
                         const content = document.createElement("div");
 
@@ -69,7 +69,7 @@ function initMap() {
                         infowindow.open(map, marker);
                     });
 
-                    reviews = place.reviews;
+                    reviews = place.reviews;    // store reviews outside of initMap() if needed
                 }
             });
         }
