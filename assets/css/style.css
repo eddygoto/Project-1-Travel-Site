@@ -47,6 +47,17 @@ h1 {
   display: flex;
   justify-content: center;
 }
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.small-box {
+  display: flex;
+  justify-content: center;
+}
 
 /* meet-us @media screen  */
 
@@ -58,7 +69,6 @@ h1 {
     flex-direction: column;
   }
 }
-
 
 /* our story image */
 #squad-img {
@@ -72,9 +82,6 @@ h1 {
   display: flex;
   align-items: center;
 }
-
-
-
 
 /* script.js styles */
 #map {
