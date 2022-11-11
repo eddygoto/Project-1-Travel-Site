@@ -74,21 +74,22 @@ function initMap() {
                     });
 
                     reviews = place.reviews; // store reviews outside of initMap() if needed
-                    console.log(reviews)  
+                    console.log(reviews)
                 }
             });
         }
     });
 }
- /**************Display Reviews Code***************** */
+/**************Display Reviews Code***************** */
 function displayReviews() {
-    for (var i = 0; i < 3; i++){
-       placeReviewsEl.innerHTML += "<div class = 'review'>"
-       placeReviewsEl.innerHTML += reviews[i].text + " --";
-       placeReviewsEl.innerHTML += reviews[i].author_name + " ";
-       placeReviewsEl.innerHTML += reviews[i].relative_time_description + " ";
-       placeReviewsEl.innerHTML += reviews[i].rating + " Stars";
-       placeReviewsEl.innerHTML += "</div>"
+    for (var i = 0; i < 3; i++) {
+        const reviewContainer = document.createElement("div");
+        placeReviewsEl.appendChild(reviewContainer);
+        reviewContainer.className = "review";
+        reviewContainer.textContent += reviews[i].text + " --";
+        reviewContainer.textContent += reviews[i].author_name + " ";
+        reviewContainer.textContent += reviews[i].relative_time_description + " ";
+        reviewContainer.textContent += reviews[i].rating + " Stars";
     }
 }
 
