@@ -71,6 +71,7 @@ function initMap() {
 
                         infowindow.setContent(content);
                         infowindow.open(map, marker);
+                        
                     });
 
                     reviews = place.reviews; // store reviews outside of initMap() if needed
@@ -80,6 +81,16 @@ function initMap() {
         }
     });
 }
+
+/**************Display Details Code***************** */
+function displayDetails() {
+    const placeDetailsEl = document.querySelector("#place-details")
+    const placeNameEl = document.querySelector("#place-name")
+    placeNameEl.textContent = place.name;
+    placeDetailsEl.textContent = place.formatted_address;
+}
+
+
 /**************Display Reviews Code***************** */
 function displayReviews() {
     for (var i = 0; i < 3; i++) {
