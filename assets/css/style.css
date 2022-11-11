@@ -94,3 +94,7 @@ h1 {
   margin-top: 16px;
   text-align: center;
 }
+
+label {
+  padding-right: 16px;
+}
