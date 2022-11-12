@@ -61,14 +61,12 @@ h1 {
 
 /* meet-us @media screen  */
 
-@media screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
-  }
+/* @media screen and (max-width: 600px) {
   #container {
     flex-direction: column;
+    
   }
-}
+} */
 
 /* our story image */
 #squad-img {
@@ -133,7 +131,40 @@ img {
   font-size: 18px;
   font-weight: bolder;
 }
-=======
+
 label {
   padding-right: 16px;
+}
+/* index page max width 720px*/
+@media screen and (max-width: 720px) {
+  #main-flex,
+  .container,
+  #container {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .person-info h2 {
+    justify-content: flex-start;
+  }
+  /* img {
+    width: 100%;
+  } */
+  #map {
+    display: block;
+  }
+  nav,
+  #map,
+  img,
+  .details {
+    width: 100%;
+  }
+}
+/* index page max width 380px*/
+@media screen and (max-width: 380px) {
+  nav,
+  #map,
+  img,
+  .details {
+    width: 100%;
+  }
 }
