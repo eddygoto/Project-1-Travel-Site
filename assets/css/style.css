@@ -137,3 +137,19 @@ img {
 label {
   padding-right: 16px;
 }
+
+.authorName {
+  margin-left: 17px;
+  margin-bottom: 0;
+  text-align: left;
+
+}
+.reviewInfo {
+  display: flex;
+  margin-left: 17px;
+
+}
+.reviewText {
+   text-align: center;
+
+}
