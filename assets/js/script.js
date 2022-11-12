@@ -14,7 +14,7 @@ var reviews;
 var placeReviewsEl = document.getElementById("place-reviews");
 var placeDetailsEl = document.querySelector("#place-details");
 var placeNameEl = document.querySelector("#place-name");
-
+var hideWelcomeEl = document.querySelector(".welcome");
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 32.7157, lng: -117.1611 }, // coords for San Diego
@@ -63,6 +63,7 @@ function initMap() {
 
             /*************** Event Listener Code ******************/
             google.maps.event.addListener(marker, "click", () => {
+              hideWelcomeEl.style.display = "none";
               const content = document.createElement("div");
 
               const nameElement = document.createElement("h2");
@@ -122,23 +123,27 @@ function displayReviews(reviews) {
     authorEl.className = "authorName";
     authorEl.textContent += reviews[i].author_name;
     reviewContainer.appendChild(authorEl);
-    
+
     const reviewInfoEl = document.createElement("h6");
     reviewInfoEl.className = "reviewInfo";
     // Populates amounts of stars based on rating
-    let stars = ""
-    for ( var n = 0; n < reviews[i].rating; n++) {
-      stars += "🌟"    
+    let stars = "";
+    for (var n = 0; n < reviews[i].rating; n++) {
+      stars += "🌟";
     }
-    reviewInfoEl.textContent += reviews[i].relative_time_description +", " + reviews[i].rating + " "+stars;
+    reviewInfoEl.textContent +=
+      reviews[i].relative_time_description +
+      ", " +
+      reviews[i].rating +
+      " " +
+      stars;
     reviewContainer.appendChild(reviewInfoEl);
-    
+
     const reviewTextEl = document.createElement("p");
     reviewTextEl.className = "reviewText";
     reviewTextEl.textContent += reviews[i].text;
-    reviewContainer.appendChild(reviewTextEl);    
+    reviewContainer.appendChild(reviewTextEl);
   }
-
 }
 
 window.initMap = initMap;
