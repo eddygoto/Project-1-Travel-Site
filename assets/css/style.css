@@ -135,6 +135,7 @@ img {
 label {
   padding-right: 16px;
 }
+
 /* index page max width 720px*/
 @media screen and (max-width: 720px) {
   #main-flex,
@@ -167,4 +168,21 @@ label {
   .details {
     width: 100%;
   }
+
+
+.authorName {
+  margin-left: 17px;
+  margin-bottom: 0;
+  text-align: left;
+
+}
+.reviewInfo {
+  display: flex;
+  margin-left: 17px;
+
+}
+.reviewText {
+   text-align: center;
+
+
 }

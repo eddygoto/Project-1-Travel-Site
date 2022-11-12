@@ -117,11 +117,28 @@ function displayReviews(reviews) {
     const reviewContainer = document.createElement("div");
     placeReviewsEl.appendChild(reviewContainer);
     reviewContainer.className = "review";
-    reviewContainer.textContent += reviews[i].text + " --";
-    reviewContainer.textContent += reviews[i].author_name + " ";
-    reviewContainer.textContent += reviews[i].relative_time_description + " ";
-    reviewContainer.textContent += reviews[i].rating + " Stars";
+
+    const authorEl = document.createElement("h5");
+    authorEl.className = "authorName";
+    authorEl.textContent += reviews[i].author_name;
+    reviewContainer.appendChild(authorEl);
+    
+    const reviewInfoEl = document.createElement("h6");
+    reviewInfoEl.className = "reviewInfo";
+    // Populates amounts of stars based on rating
+    let stars = ""
+    for ( var n = 0; n < reviews[i].rating; n++) {
+      stars += "🌟"    
+    }
+    reviewInfoEl.textContent += reviews[i].relative_time_description +", " + reviews[i].rating + " "+stars;
+    reviewContainer.appendChild(reviewInfoEl);
+    
+    const reviewTextEl = document.createElement("p");
+    reviewTextEl.className = "reviewText";
+    reviewTextEl.textContent += reviews[i].text;
+    reviewContainer.appendChild(reviewTextEl);    
   }
+
 }
 
 window.initMap = initMap;
