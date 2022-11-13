@@ -45,8 +45,8 @@ function randomizeGem(array) {
 
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 32.7157, lng: -117.1611 }, // coords for San Diego
-    zoom: 12,
+    center: { lat: 32.85, lng: -117.1611 }, // coords for San Diego
+    zoom: 10,
   });
 
   const infowindow = new google.maps.InfoWindow();
@@ -73,8 +73,12 @@ function initMap() {
             "geometry",
             "reviews",
             "photos",
+            "url",
+            "address_components",
           ], // fields to return
         };
+
+        var addy;
 
         service.getDetails(getDetailsRequest, (place, status) => {
           if (
@@ -91,7 +95,7 @@ function initMap() {
 
             /*************** Event Listener Code ******************/
             google.maps.event.addListener(marker, "click", () => {
-              hideWelcomeEl.style.display = "none";
+              // hideWelcomeEl.style.display = "none";
               const content = document.createElement("div");
 
               const nameElement = document.createElement("h2");
@@ -99,7 +103,10 @@ function initMap() {
               content.appendChild(nameElement);
 
               const placeAddressElement = document.createElement("p");
-              placeAddressElement.textContent = place.formatted_address;
+              addy = place.formatted_address;
+              addy = addy.slice(0, addy.length-5);
+
+              placeAddressElement.textContent = addy;
               content.appendChild(placeAddressElement);
 
               const placeImageElement = document.createElement("img");
@@ -114,7 +121,7 @@ function initMap() {
 
               cleanElement(placeReviewsEl);
               cleanElement(placeDetailsEl);
-              displayDetails(place.name, place.formatted_address);
+              displayDetails(place.name, addy, place.url);
               displayReviews(place.reviews);
             });
 
@@ -135,8 +142,10 @@ function cleanElement(element) {
 }
 
 /**************Display Details Code***************** */
-function displayDetails(name, address) {
+function displayDetails(name, address, url) {
   placeNameEl.textContent = name;
+  placeNameEl.setAttribute("href", url);
+  placeNameEl.setAttribute("target", "_blank");
   placeDetailsEl.textContent = address;
 }
 
