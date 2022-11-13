@@ -161,6 +161,9 @@ label {
   img,
   .details {
     width: 100%;
+    
+  }
+  .details {
     padding-left: 0;
   }
 }
@@ -171,7 +174,9 @@ label {
   #map,
   img,
   .details {
-    width: 100%;
+    width: 100%;    
+  }
+  .details {
     padding-left: 0;
   }
 
