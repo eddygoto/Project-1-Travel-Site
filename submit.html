@@ -61,43 +61,87 @@
         <h2 class="submit d-flex justify-content-center" id="meet-us-header">
           Submit Your Own Gems!
         </h2>
-        <div><p>Required fields are marked with an asterisk*</p></div>
+        <div><p>Required fields are marked with an asterisk (*)</p></div>
+
         <!-- The body form -->
-        <div>
-          <div id="wrapper">
-            <!-- FName box -->
-            <div class="small-box">
-              <label for="myFName">*First Name: </label>
-              <input type="text" name="myFName" id="myFName" required />
+        <div
+          class="d-flex flex-wrap justify-content-between"
+          id="submit-container"
+        >
+          <form>
+            <div id="form-container">
+              <!-- name box -->
+              <div class="small-box">
+                <label for="myName">Name *: </label>
+                <input type="text" name="myName" id="myName" required />
+              </div>
+              <!-- gem name box -->
+              <div class="small-box">
+                <label for="myGemName">Your Gem's Name *: </label>
+                <input type="text" name="myGemName" id="myGemName" required />
+              </div>
+              <!-- address number box -->
+              <div class="small-box">
+                <label for="myAddress">Your Gem's Address *: </label>
+                <input type="text" name="myAddress" id="myAddress" required />
+              </div>
+              <!-- site url box -->
+              <div class="small-box">
+                <label for="myURL">Your Gem's Website: </label>
+                <input type="url" name="myURL" id="myURL" />
+              </div>
+
+              <!-- comment box -->
+              <!-- <div class="small-box">
+                <label for="myComments">Comments: </label>
+                <textarea
+                  name="myComments"
+                  id="myComments"
+                  cols="30"
+                  rows="10"
+                ></textarea>
+              </div> -->
+
+              <!-- submit button -->
+              <!-- <button
+                class="btn btn-outline-success"
+                type="button"
+                onclick="saveData()"
+                id="save-btn"
+              >
+                Submit
+              </button> -->
+              <div class="submitBtn m-3">
+                <input type="submit" value="Submit" />
+              </div>
             </div>
-            <!-- LName box -->
-            <div class="small-box">
-              <label for="myLName">*Last Name: </label>
-              <input type="text" name="myLName" id="myLName" required />
-            </div>
-            <!-- email box -->
-            <div class="small-box">
-              <label for="myEmail">*Email: </label>
-              <input type="text" name="myEmail" id="myEmail" required />
-            </div>
-            <!-- phone number box -->
-            <div class="small-box">
-              <label for="myPhone">*Phone: </label>
-              <input type="tel" name="myPhone" id="myPhone" maxlength="12" />
-            </div>
-            <!-- comment box -->
-            <div class="small-box">
-              <label for="myComments">*Comments: </label>
-              <textarea
-                name="myComments"
-                id="myComments"
-                cols="30"
-                rows="10"
-              ></textarea>
-            </div>
-            <!-- summit button -->
-            <div class="submitBtn">
-              <input type="submit" value="Submit" />
+          </form>
+
+          <!-- displays last saved hidden gem -->
+          <div class="pr-5" id="saved-container">
+            <div class="box-title">Last Submitted Gem</div>
+            <div class="saved-content">
+              <p class="saved" id="gem-title">
+                Name:&nbsp;<span id="saved-gem-name"></span>
+              </p>
+              <p class="saved">
+                Address:&nbsp;<span id="saved-address"></span>
+              </p>
+              <p class="saved">
+                Website (if included):&nbsp;<span id="saved-url"></span>
+              </p>
+              <!-- <p class="saved" id="saved-comment"></p> -->
+              <p class="saved">
+                Submitted by:&nbsp;<span id="saved-author"></span>
+              </p>
+              <button
+                class="btn btn-outline-danger"
+                type="button"
+                onclick="eraseData()"
+                id="erase-btn"
+              >
+                Clear
+              </button>
             </div>
           </div>
         </div>
