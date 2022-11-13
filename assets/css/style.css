@@ -243,12 +243,6 @@ label {
   color: rgb(84, 55, 112);
 }
 
-  .welcome {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-
 .welcome h3 {
   position: relative;
   bottom: 220px;
