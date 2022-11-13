@@ -9,6 +9,14 @@ var hiddenGemsFull = [
   "Campfire",
   "Hayes Burger",
   "Din Tai Fung",
+  "Pizzeria Luigi",
+  "Las Cuatro Milpas",
+  "Pho Cow Cali",
+  "The Original Sab-E-Lee",
+  "Chez Nous",
+  "Hidden Fish",
+  "Cowboy Star Restaurant & Butcher Shop"
+  
 ];
 
 
@@ -32,7 +40,7 @@ function randomizeGem(array) {
       array[randomIndex], array[currentIndex]];
   }
   //Only picks 5 gems to display
-  array=array.slice(5)
+  array=array.slice(0,5)
   return array;
 }
 
