@@ -1,5 +1,5 @@
 var hiddenGems = [
-  "Grand Ole BBQ",
+  "Grand Ole BBQ Y Asado",
   "La Fachada",
   "Trining's Bakery",
   "Swami's Beach",
