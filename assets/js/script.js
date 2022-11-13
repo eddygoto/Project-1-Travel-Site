@@ -40,14 +40,13 @@ function randomizeGem(array) {
       array[randomIndex], array[currentIndex]];
   }
   //Only picks 5 gems to display
-  array=array.slice(0,5)
-  return array;
+  return array.slice(0,5);
 }
 
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 32.7157, lng: -117.1611 }, // coords for San Diego
-    zoom: 14,
+    zoom: 12,
   });
 
   const infowindow = new google.maps.InfoWindow();
