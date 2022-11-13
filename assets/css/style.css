@@ -90,7 +90,10 @@ h1 {
 /* Formats review text on Index.html */
 .review {
   margin-top: 16px;
-  text-align: center;
+  text-align: left;
+}
+.authorName {
+  margin-bottom: 0;
 }
 
 /* main img */
@@ -158,29 +161,25 @@ label {
   img,
   .details {
     width: 100%;
+    
+  }
+  .details {
+    padding-left: 0;
   }
 }
+
 /* index page max width 380px*/
 @media screen and (max-width: 380px) {
   nav,
   #map,
   img,
   .details {
-    width: 100%;
+    width: 100%;    
+  }
+  .details {
+    padding-left: 0;
   }
 
-  .authorName {
-    margin-left: 17px;
-    margin-bottom: 0;
-    text-align: left;
-  }
-  .reviewInfo {
-    display: flex;
-    margin-left: 17px;
-  }
-  .reviewText {
-    text-align: center;
-  }
   .welcome {
     display: flex;
     flex-direction: column;

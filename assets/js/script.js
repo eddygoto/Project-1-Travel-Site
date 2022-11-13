@@ -1,20 +1,49 @@
-var hiddenGems = [
-  "Grand Ole BBQ",
+var hiddenGemsFull = [
+  "Grand Ole BBQ Y Asado",
   "La Fachada",
   "Trining's Bakery",
   "Swami's Beach",
-  // "Liberty Public Market"
-  // ------ Coming up with OVER_QUERY_LIMIT when running getDetails for more than four places
-  // "Morley Field Disc Golf Course",
-  // "OB Noodle House Bar 1502",
-  // "Campfire"
+  "Liberty Public Market",   
+  "Morley Field Disc Golf Course",
+  "OB Noodle House Bar 1502",
+  "Campfire",
+  "Hayes Burger",
+  "Din Tai Fung",
+  "Pizzeria Luigi",
+  "Las Cuatro Milpas",
+  "Pho Cow Cali",
+  "The Original Sab-E-Lee",
+  "Chez Nous",
+  "Hidden Fish",
+  "Cowboy Star Restaurant & Butcher Shop"
+  
 ];
+
+
+var hiddenGems;
 
 var reviews;
 var placeReviewsEl = document.getElementById("place-reviews");
 var placeDetailsEl = document.querySelector("#place-details");
 var placeNameEl = document.querySelector("#place-name");
 var hideWelcomeEl = document.querySelector(".welcome");
+
+/********* Radomize locations function **********/
+function randomizeGem(array) {
+  let currentIndex = array.length,  randomIndex;
+  while (currentIndex != 0) {
+   // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+   // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+  //Only picks 5 gems to display
+  array=array.slice(0,5)
+  return array;
+}
+
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 32.7157, lng: -117.1611 }, // coords for San Diego
@@ -146,4 +175,5 @@ function displayReviews(reviews) {
   }
 }
 
+hiddenGems=randomizeGem(hiddenGemsFull);
 window.initMap = initMap;
