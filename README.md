@@ -33,13 +33,29 @@ A website that displays a map with hidden gems placed using markers. The user ca
 
 ## Mock-Up
 
-Insert Screen shots
+Upon Arrival, User is welcomed and presented with 5 markers to select on the map.
+![Screenshot of application](./assets/images/Mock-Up/homepage.png)
+
+Once a marker is selected a link, details and reviews are provided for that location.
+![Screenshot of application](./assets/images/Mock-Up/marker-selected.png)
+
+A simple page that describes our story.
+![Screenshot of application](./assets/images/Mock-Up/ourstory.png)
+
+Bios of the deveolpment team.
+![Screenshot of application](./assets/images/Mock-Up/Meet-our-team.png)
+
+A page for the user to submit their own gem!
+![Screenshot of application](./assets/images/Mock-Up/submit-empty.png)
+
+Once the gem is entered, user is provided confirmation that submission is stored.
+![Screenshot of application](./assets/images/Mock-Up/submit-saved.png)
 
 ## Technologies Used
 
 - HTML
 - CSS
 - JavaScript
-  -3rd Part APIs Used:  
+-3rd Part APIs Used:  
     -Google Maps
     -Google Places
