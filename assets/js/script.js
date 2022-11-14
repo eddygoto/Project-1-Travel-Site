@@ -15,8 +15,9 @@ var hiddenGemsFull = [
   "The Original Sab-E-Lee",
   "Chez Nous",
   "Hidden Fish",
-  "Cowboy Star Restaurant & Butcher Shop"
-  
+  "Cowboy Star Restaurant & Butcher Shop",
+  "Haidilao Hot Pot San Diego",
+  "Great Maple"
 ];
 
 
