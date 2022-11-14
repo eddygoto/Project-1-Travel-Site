@@ -41,5 +41,5 @@ Insert Screen shots
 - CSS
 - JavaScript
   -3rd Part APIs Used:  
-   -Google Maps
-  -Google Places
+    -Google Maps
+    -Google Places
