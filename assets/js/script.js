@@ -3,7 +3,7 @@ var hiddenGemsFull = [
   "La Fachada",
   "Trining's Bakery",
   "Swami's Beach",
-  "Liberty Public Market",   
+  "Liberty Public Market",
   "Morley Field Disc Golf Course",
   "OB Noodle House Bar 1502",
   "Campfire",
@@ -17,9 +17,8 @@ var hiddenGemsFull = [
   "Hidden Fish",
   "Cowboy Star Restaurant & Butcher Shop",
   "Haidilao Hot Pot San Diego",
-  "Great Maple"
+  "Great Maple",
 ];
-
 
 var hiddenGems;
 
@@ -27,21 +26,24 @@ var reviews;
 var placeReviewsEl = document.getElementById("place-reviews");
 var placeDetailsEl = document.querySelector("#place-details");
 var placeNameEl = document.querySelector("#place-name");
-var hideWelcomeEl = document.querySelector(".welcome");
+// var hideWelcomeEl = document.querySelector(".welcome");
 
 /********* Radomize locations function **********/
 function randomizeGem(array) {
-  let currentIndex = array.length,  randomIndex;
+  let currentIndex = array.length,
+    randomIndex;
   while (currentIndex != 0) {
-   // Pick a remaining element.
+    // Pick a remaining element.
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
-   // And swap it with the current element.
+    // And swap it with the current element.
     [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
+      array[randomIndex],
+      array[currentIndex],
+    ];
   }
   //Only picks 5 gems to display
-  return array.slice(0,5);
+  return array.slice(0, 5);
 }
 
 function initMap() {
@@ -105,7 +107,7 @@ function initMap() {
 
               const placeAddressElement = document.createElement("p");
               addy = place.formatted_address;
-              addy = addy.slice(0, addy.length-5);
+              addy = addy.slice(0, addy.length - 5);
 
               placeAddressElement.textContent = addy;
               content.appendChild(placeAddressElement);
@@ -184,5 +186,5 @@ function displayReviews(reviews) {
   }
 }
 
-hiddenGems=randomizeGem(hiddenGemsFull);
+hiddenGems = randomizeGem(hiddenGemsFull);
 window.initMap = initMap;
