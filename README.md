@@ -56,6 +56,6 @@ Once the gem is entered, user is provided confirmation that submission is stored
 - HTML
 - CSS
 - JavaScript
--3rd Part APIs Used:  
+-3rd Part APIs Used  
     -Google Maps
     -Google Places
